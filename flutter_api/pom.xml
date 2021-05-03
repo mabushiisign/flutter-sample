@@ -18,7 +18,7 @@
     <jdk.version>11</jdk.version>
     <release.version>11</release.version>
     <micronaut.version>2.5.0</micronaut.version>
-    <exec.mainClass>flutter_api.Application</exec.mainClass>
+    <exec.mainClass>com.mabushiisign.flutter_sample.api.Application</exec.mainClass>
     <micronaut.runtime>netty</micronaut.runtime>
   </properties>
 

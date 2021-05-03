@@ -9,4 +9,15 @@ micronaut:
         descriptions: true
         step: PT1M
   security:
+    enabled: false
     authentication: session
+
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+

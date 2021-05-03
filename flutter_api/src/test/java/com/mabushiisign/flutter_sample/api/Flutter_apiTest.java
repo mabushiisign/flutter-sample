@@ -1,4 +1,4 @@
-package flutter_api;
+package com.mabushiisign.flutter_sample.api;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
