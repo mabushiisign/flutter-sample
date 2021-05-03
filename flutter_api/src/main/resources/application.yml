@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: flutter_api
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        descriptions: true
+        step: PT1M
+  security:
+    authentication: session

@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: flutter_api
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, graphql, http-client, java, java-application, junit, logback, lombok, management, maven, micrometer, micrometer-prometheus, mockito, netty-server, openapi, readme, security, security-annotations, security-session, shade, yaml]
