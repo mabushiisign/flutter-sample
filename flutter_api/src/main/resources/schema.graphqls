@@ -1,0 +1,36 @@
+"""
+書籍情報
+"""
+type Book {
+  "ID"
+  id: ID!
+  "タイトル"
+  title: String
+  "価格"
+  price: Int
+}
+
+"""
+書籍検索条件
+"""
+input BookFilter {
+  "ID: 完全一致"
+  id: ID
+  "タイトル: 部分一致"
+  title: String
+  "価格: 上限"
+  maxPrice: Int
+  "価格: 下限"
+  minPrice: Int
+}
+
+type Query {
+
+  """
+  書籍検索
+  """
+  books(
+    "検索条件"
+    filter: BookFilter!
+  ): [Book]
+}

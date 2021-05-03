@@ -11,7 +11,6 @@ micronaut:
   security:
     enabled: false
     authentication: session
-
   router:
     static-resources:
       swagger:
@@ -21,3 +20,9 @@ micronaut:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
 
+graphql:
+  enabled: true 
+  path: /graphql
+  graphiql:
+    enabled: true
+    path: /graphiql

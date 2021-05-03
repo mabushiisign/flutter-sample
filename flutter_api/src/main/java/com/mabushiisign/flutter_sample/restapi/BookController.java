@@ -7,7 +7,6 @@ import com.mabushiisign.flutter_sample.domain.Book;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Produces;
 
 @Controller("/api/book")
 public class BookController {
