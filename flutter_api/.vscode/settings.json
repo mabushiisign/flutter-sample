@@ -1,0 +1,6 @@
+{
+  "java.format.settings.url": "eclipse-java-google-style.xml",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
+}
