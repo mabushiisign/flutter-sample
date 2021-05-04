@@ -1,7 +1,6 @@
-package com.mabushiisign.flutter_sample.domain;
+package com.mabushiisign.flutter_sample.api.domain;
 
 import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;

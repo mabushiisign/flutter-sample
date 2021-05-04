@@ -1,12 +1,14 @@
-package com.mabushiisign.flutter_sample.domain;
+package com.mabushiisign.flutter_sample.api.domain;
 
 import java.util.Map;
 import java.util.Optional;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
+@Setter
 @Builder
 @ToString
 public class BookFilter {

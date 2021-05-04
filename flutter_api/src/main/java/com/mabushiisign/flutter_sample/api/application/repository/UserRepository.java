@@ -1,11 +1,11 @@
-package com.mabushiisign.flutter_sample.repository;
+package com.mabushiisign.flutter_sample.api.application.repository;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import javax.inject.Singleton;
-import com.mabushiisign.flutter_sample.domain.User;
+import com.mabushiisign.flutter_sample.api.domain.User;
 
 @Singleton
 public class UserRepository {

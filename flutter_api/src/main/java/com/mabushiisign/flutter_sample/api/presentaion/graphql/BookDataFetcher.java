@@ -1,9 +1,10 @@
-package com.mabushiisign.flutter_sample.graphql;
+package com.mabushiisign.flutter_sample.api.presentaion.graphql;
 
 import java.util.List;
 import javax.inject.Singleton;
-import com.mabushiisign.flutter_sample.domain.Book;
-import com.mabushiisign.flutter_sample.domain.BookFilter;
+import com.mabushiisign.flutter_sample.api.application.service.BookService;
+import com.mabushiisign.flutter_sample.api.domain.Book;
+import com.mabushiisign.flutter_sample.api.domain.BookFilter;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 import graphql.schema.DataFetchingFieldSelectionSet;
@@ -14,10 +15,12 @@ import lombok.extern.java.Log;
 @Log
 public class BookDataFetcher implements DataFetcher<List<Book>> {
 
-  protected SecurityService securityService;
+  private SecurityService securityService;
+  private BookService bookService;
 
-  public BookDataFetcher(SecurityService securityService) {
+  public BookDataFetcher(SecurityService securityService, BookService bookService) {
     this.securityService = securityService;
+    this.bookService = bookService;
   }
 
   @Override
@@ -29,21 +32,8 @@ public class BookDataFetcher implements DataFetcher<List<Book>> {
       log.info("select:" + field.getName());
     });
 
-    return list(filter);
+    return bookService.find(filter);
   }
 
-  public List<Book> list(BookFilter filter) {
-    log.info("filter:" + filter.toString());
-    return List.of(
-        Book.builder()
-            .id("123")
-            .title("MyBook")
-            .price(1000)
-            .build(),
-        Book.builder()
-            .id("1234")
-            .title("Your Book")
-            .price(2500)
-            .build());
-  }
+
 }

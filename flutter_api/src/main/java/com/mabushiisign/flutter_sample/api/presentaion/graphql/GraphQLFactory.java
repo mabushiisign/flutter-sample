@@ -1,4 +1,4 @@
-package com.mabushiisign.flutter_sample.graphql;
+package com.mabushiisign.flutter_sample.api.presentaion.graphql;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,9 +1,9 @@
-package com.mabushiisign.flutter_sample.security;
+package com.mabushiisign.flutter_sample.api.application.security;
 
 import java.util.Optional;
 import javax.inject.Singleton;
-import com.mabushiisign.flutter_sample.domain.User;
-import com.mabushiisign.flutter_sample.repository.UserRepository;
+import com.mabushiisign.flutter_sample.api.application.repository.UserRepository;
+import com.mabushiisign.flutter_sample.api.domain.User;
 import org.reactivestreams.Publisher;
 import edu.umd.cs.findbugs.annotations.Nullable;
 import io.micronaut.http.HttpRequest;

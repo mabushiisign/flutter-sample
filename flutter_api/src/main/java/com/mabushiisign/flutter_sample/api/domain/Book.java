@@ -1,4 +1,4 @@
-package com.mabushiisign.flutter_sample.domain;
+package com.mabushiisign.flutter_sample.api.domain;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
