@@ -1,7 +1,6 @@
 package com.mabushiisign.flutter_sample.graphql;
 
 import java.util.List;
-import javax.inject.Inject;
 import javax.inject.Singleton;
 import com.mabushiisign.flutter_sample.domain.Book;
 import com.mabushiisign.flutter_sample.domain.BookFilter;
@@ -15,8 +14,11 @@ import lombok.extern.java.Log;
 @Log
 public class BookDataFetcher implements DataFetcher<List<Book>> {
 
-  @Inject
   protected SecurityService securityService;
+
+  public BookDataFetcher(SecurityService securityService) {
+    this.securityService = securityService;
+  }
 
   @Override
   public List<Book> get(DataFetchingEnvironment env) {
