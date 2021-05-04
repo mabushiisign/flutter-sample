@@ -1,6 +1,7 @@
 micronaut:
   application:
     name: flutter_api
+
   metrics:
     enabled: true
     export:
@@ -8,9 +9,44 @@ micronaut:
         enabled: true
         descriptions: true
         step: PT1M
+
+  session:
+    http:
+      cookie-same-site: Strict
+
   security:
-    enabled: false
+    enabled: true
     authentication: session
+    session:
+      enabled: true
+    redirect:
+      login-success: "/login-success"
+      login-failure: "/login-failure"
+    endpoints:
+      login:
+        enabled: true
+        path: "/login"
+      logout:
+        enabled: true
+        path: "/logout"
+        get-allowed: true
+    intercept-url-map:
+      - pattern: /graphql
+        access:
+          - isAuthenticated()
+      - pattern: /graphiql
+        access:
+          - isAnonymous()
+      - pattern: /swagger/**
+        access:
+          - isAnonymous()
+      - pattern: /swagger-ui/**
+        access:
+          - isAnonymous()
+      - pattern: /api/**
+        access:
+          - isAuthenticated()
+
   router:
     static-resources:
       swagger:
@@ -21,7 +57,7 @@ micronaut:
         mapping: /swagger-ui/**
 
 graphql:
-  enabled: true 
+  enabled: true
   path: /graphql
   graphiql:
     enabled: true

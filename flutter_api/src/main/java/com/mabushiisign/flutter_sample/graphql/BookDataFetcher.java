@@ -1,21 +1,27 @@
 package com.mabushiisign.flutter_sample.graphql;
 
 import java.util.List;
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import com.mabushiisign.flutter_sample.domain.Book;
 import com.mabushiisign.flutter_sample.domain.BookFilter;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 import graphql.schema.DataFetchingFieldSelectionSet;
+import io.micronaut.security.utils.SecurityService;
 import lombok.extern.java.Log;
 
 @Singleton
 @Log
 public class BookDataFetcher implements DataFetcher<List<Book>> {
 
+  @Inject
+  protected SecurityService securityService;
+
   @Override
   public List<Book> get(DataFetchingEnvironment env) {
     BookFilter filter = BookFilter.fromMap(env.getArgument("filter"));
+    log.info("username:" + securityService.username().get());
     DataFetchingFieldSelectionSet selectionSet = env.getSelectionSet();
     selectionSet.getFields().forEach(field -> {
       log.info("select:" + field.getName());

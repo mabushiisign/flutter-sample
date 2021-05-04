@@ -1,7 +1,9 @@
 {
   "java.format.settings.url": "eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
   "java.saveActions.organizeImports": true,
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "files.insertFinalNewline": true
 }

@@ -2,9 +2,7 @@ package com.mabushiisign.flutter_sample.graphql;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
 import javax.inject.Singleton;
-
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
@@ -28,7 +26,8 @@ public class GraphQLFactory {
     // Parse the schema.
     TypeDefinitionRegistry typeRegistry = new TypeDefinitionRegistry();
     typeRegistry.merge(schemaParser.parse(new BufferedReader(
-        new InputStreamReader(resourceResolver.getResourceAsStream("classpath:schema.graphqls").get()))));
+        new InputStreamReader(
+            resourceResolver.getResourceAsStream("classpath:schema.graphqls").get()))));
 
     // Create the runtime wiring.
     RuntimeWiring runtimeWiring = RuntimeWiring.newRuntimeWiring()
